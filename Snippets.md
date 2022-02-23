@@ -10,11 +10,3 @@
         }
     }
 ```
-
-## Demo1
-
-```C
-    int main(){
-        cout << "Hello World";
-    }
-```
