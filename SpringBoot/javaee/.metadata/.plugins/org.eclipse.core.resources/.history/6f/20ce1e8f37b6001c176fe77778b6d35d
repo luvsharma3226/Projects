@@ -1,0 +1,26 @@
+package dao;
+
+import pojos.Customer;
+import java.sql.*;
+import static utils.DBUtils.fetchConnection;
+
+public class CustomerDaoImpl implements ICustomerDao {
+
+	//data members
+	private Connection cn;
+	private PreparedStatement pst1;
+	
+	//constr : arg less constr
+	
+	@Override
+	public Customer authenticateCustomer(String email, String password) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public CustomerDaoImpl() throws Exception{
+		//getConnection
+		cn = fetchConnection();
+	}
+
+}

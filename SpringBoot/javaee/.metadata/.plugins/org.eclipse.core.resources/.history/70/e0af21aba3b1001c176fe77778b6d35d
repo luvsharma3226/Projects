@@ -1,0 +1,13 @@
+package pojos;
+//  id | email | password | reg_amt | reg_date 
+
+import java.sql.Date;
+
+public class Customer {
+
+	private int customerId;
+	private String email, password;
+	private double regAmount;
+	private Date regDate;
+	
+}

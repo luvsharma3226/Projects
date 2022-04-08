@@ -1,0 +1,13 @@
+package dao;
+
+import pojos.Customer;
+
+public class CustomerDaoImpl implements ICustomerDao {
+
+	@Override
+	public Customer authenticateCustomer(String email, String password) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

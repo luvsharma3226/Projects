@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome Page</title>
+</head>
+<body>
+		<h4>
+			<a href="test">Call by annotation</a>
+			<a href="test2">Call by annotation again</a>
+		</h4>
+</body>
+</html>
