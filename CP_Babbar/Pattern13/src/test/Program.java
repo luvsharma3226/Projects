@@ -9,15 +9,19 @@ public class Program {
 		System.out.println("Enter the value of n: ");
 		int n = sc.nextInt();
 		int row = 1;
-		while(row <= n) {
+
+		while (row <= n) {
 			int column = 1;
-			while(column <= row ) {
-				System.out.print(row-column+1);
-				column++;
+
+			while (column <= n) {
+
+				System.out.print("*");
+				column--;
 			}
+
 			row++;
 			System.out.println();
-			
+
 		}
 	}
 }
