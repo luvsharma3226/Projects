@@ -1,0 +1,35 @@
+.dropdownBox{
+    /* text-align: center; */
+    margin: 50px 0px 0px 0px;
+
+}
+
+@font-face {
+    font-family: LoveRabbit;
+    src: url("../../assets/fonts/Humbert-Regular.ttf");
+}
+.user{
+    position: relative;
+    top: 20px;
+    right: 400px;
+    text-align: right;
+    
+    font-size: 30px;
+   
+    font-family: LoveRabbit;
+    color: white;
+}
+img{
+    min-height: 200px;
+    width: 200px;
+    border-radius: 150px;
+    float: right;
+    position: relative;
+    bottom: 180px;
+    right: 170px;
+}
+
+.id{
+    
+}
+

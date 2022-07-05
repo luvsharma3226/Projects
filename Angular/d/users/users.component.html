@@ -1,0 +1,29 @@
+<div class="users">
+  <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          [(ngModel)]="selectedUserId"
+          class="btn btn-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Select User ID
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button
+            (click)="selectedUserId = i"
+            *ngFor="let i of iter"
+            ngbDropdownItem
+          >
+            {{ i }}
+          </button>
+        </div>
+
+        <div style="background-color: red">
+          {{ selectedUserId }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
