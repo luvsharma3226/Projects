@@ -8,24 +8,23 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the value of n: ");
 		int n = sc.nextInt();
-
 		int row = 1;
-		while(row <= n) {
+
+		while (row <= n) {
+			int col = 1;
 			
 			int space = 1;
-			while(space <= n -row) {
+			while(space < row) {
 				System.out.print(" ");
 				space++;
 			}
 			
-			int col = 1;
-			while(col <= row) {
-				System.out.print("#");
+			while(col <= n -row+1) {
+				System.out.print("*");
 				col++;
 			}
 			row++;
 			System.out.println();
 		}
-		
 	}
 }
