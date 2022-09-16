@@ -77,7 +77,7 @@ public class Program {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main1(String[] args) {
 		List<Person> people = Person.generateDefaultList();
 
 //		System.out.println(people);
@@ -99,16 +99,17 @@ public class Program {
 		a.message();
 	}
 
-	public static void main1(String[] args) {
+	public static void main(String[] args) {
 
 		List<Employee> empList = new ArrayList<Employee>();
+		empList.add(new Employee("Pooja", "Rai", 78000.0, List.of("p7", "p8")));
 		empList.add(new Employee("Ajay", "Patil", 20000.0, List.of("P1", "p2")));
 		empList.add(new Employee("Kedar", "Apet", 30000.0, List.of("P3", "p5")));
 		empList.add(new Employee("Luv", "Sharma", 40000.0, List.of("P5", "p7")));
 		empList.add(new Employee("Kishan", "Chand", 60000.0, List.of("P4", "p8")));
 
 		Stream.of(empList).forEach(t -> System.out.println(t));
-		;
+		
 	}
 
 }
