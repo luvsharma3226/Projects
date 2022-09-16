@@ -3,10 +3,9 @@ package com.dailycodebuffer.spring.data.jpa.tutorial.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.dailycodebuffer.spring.data.jpa.tutorial.entity.Student;
+import com.dailycodebuffer.spring.data.jpa.tutorial.entity.product.Product;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Long> {
-
+public interface ProductRepository extends JpaRepository<Product, Integer>{
 
 }

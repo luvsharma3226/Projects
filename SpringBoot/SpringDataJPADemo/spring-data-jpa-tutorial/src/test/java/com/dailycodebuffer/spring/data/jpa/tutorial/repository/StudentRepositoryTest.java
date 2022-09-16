@@ -1,13 +1,7 @@
 package com.dailycodebuffer.spring.data.jpa.tutorial.repository;
 
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import com.dailycodebuffer.spring.data.jpa.tutorial.entity.Guardian;
-import com.dailycodebuffer.spring.data.jpa.tutorial.entity.Student;
 
 @SpringBootTest
 //@DataJpaTest
@@ -38,7 +32,7 @@ class StudentRepositoryTest {
 //		for (Student student : studentList) {
 //			System.out.println(student.toString());
 //		}
-//
+
 //	}
 
 }
