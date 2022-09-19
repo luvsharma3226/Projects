@@ -1,0 +1,31 @@
+package com.ng.admin.service.organisation;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.MenuMappingDto;
+import com.ng.admin.model.Mart;
+import com.ng.admin.model.MenuMapping;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+
+@Service
+@Transactional
+public class MenuMappingServiceImpl implements IMenuMappingService {
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+	@Autowired
+	private IMartRepository martRepository;
+	
+
+	@Override
+	public String saveMenuMappingDetails(MenuMappingDto menuMappingDto ) {
+		MenuMapping menuMapping=new MenuMapping();
+		Mart mart = martRepository.findById(menuMappingDto.getMartId()).orElseThrow(()-> new RuntimeException("Mart Id not found"));
+		menuMappingRepository.save(menuMapping);
+		return "Menu mapping saved successfully";
+	}
+
+}

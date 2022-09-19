@@ -1,0 +1,9 @@
+package com.ng.admin.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ng.admin.model.MenuMapping;
+
+public interface IMenuMappingRepository extends JpaRepository<MenuMapping, Integer> {
+MenuMapping findByMenuItem(String menuItem);
+}

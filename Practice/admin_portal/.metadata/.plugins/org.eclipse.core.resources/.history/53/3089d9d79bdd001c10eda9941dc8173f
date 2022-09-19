@@ -1,0 +1,11 @@
+package com.ng.admin.projections;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_EMPTY)
+public interface OrganizationTypeView {
+	Integer getId();
+
+	String getOrganiztionType();
+}

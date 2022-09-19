@@ -1,0 +1,6 @@
+package com.ng.admin.projections;
+
+public interface OrganizationTypeView {
+private int id;
+private String OrganiztionType;
+}

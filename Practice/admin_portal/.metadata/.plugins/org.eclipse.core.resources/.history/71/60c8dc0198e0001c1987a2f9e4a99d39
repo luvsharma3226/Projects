@@ -1,0 +1,17 @@
+package com.ng.admin.dto;
+
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class PortalDto {
+private String portalName;
+private String portalAlias;
+private List<Integer> menuMappingIdList;
+}

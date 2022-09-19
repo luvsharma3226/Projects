@@ -1,0 +1,17 @@
+package com.ng.admin.projections;
+
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_EMPTY)
+public interface PortalView {
+	Integer getId();
+
+	String getPortalName();
+
+	String getAliasName();
+	String getCreatedBy();
+	LocalDateTime getCreationTime();
+}

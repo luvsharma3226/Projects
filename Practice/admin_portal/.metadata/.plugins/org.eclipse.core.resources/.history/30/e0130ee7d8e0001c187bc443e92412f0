@@ -1,0 +1,10 @@
+package com.ng.admin.service.organisation;
+
+import com.ng.admin.dto.MartDto;
+
+public interface IMartService {
+	
+	String saveMartDetails(MartDto martDto) throws Exception; 
+	
+
+}

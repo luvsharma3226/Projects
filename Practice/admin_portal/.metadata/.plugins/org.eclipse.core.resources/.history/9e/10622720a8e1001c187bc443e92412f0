@@ -1,0 +1,22 @@
+package com.ng.admin.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.ng.admin.model.OrganizationType;
+import com.ng.admin.projections.OrganizationTypeAliasAndId;
+import com.ng.admin.projections.OrganizationTypeNameAndId;
+
+@Repository
+public interface IOrganizationTypeRepository extends JpaRepository<OrganizationType, Integer>{
+	
+	@Query("select new com.ng.admin.model.OrganizationType(o.id,o.organizationType) from OrganizationType o")
+	public List<OrganizationTypeNameAndId> getOrganizationTypeAndIdList();
+	public List<OrganizationType> findAllByOrderByIdAsc();
+	@Query("select new com.ng.admin.model.OrganizationType(o.id,o.organizationAlias) from OrganizationType o")
+	public List<OrganizationTypeAliasAndId> getOrganizationTypeAliasAndIdList();
+	
+}

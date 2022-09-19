@@ -1,0 +1,28 @@
+package com.ng.admin.model;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Portal extends BaseEntity{
+	private String portalName;
+	private String portalAlias;
+	@ManyToMany
+	@JoinTable( name="portal_menu_mapping", joinColumns = @JoinColumn(name="portal_id") ,inverseJoinColumns =  @JoinColumn(name="menu_mapping_id"))
+	private Map<MenuMapping,List<Mart>> menuMappingList = new HashMap<>();
+}

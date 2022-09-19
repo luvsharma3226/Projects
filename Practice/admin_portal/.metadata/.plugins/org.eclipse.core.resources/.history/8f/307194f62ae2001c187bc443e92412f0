@@ -1,0 +1,17 @@
+package com.ng.admin.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.ng.admin.model.Portal;
+import com.ng.admin.projections.PortalNameAndId;
+import com.ng.admin.projections.PortalView;
+
+public interface IPortalRepository extends JpaRepository<Portal, Integer> {
+	@Query("select new com.ng.admin.model.Portal(p.id,p.portalName,p.portalAlias,p.createdBy,p.creationTime)  from Portal p")
+	List<PortalView> getPortalDetails();
+	@Query("select new com.ng.admin.model.Portal(p.id,p.portalName)  from Portal p")
+	List<PortalNameAndId> getPortalNameIdList();
+}

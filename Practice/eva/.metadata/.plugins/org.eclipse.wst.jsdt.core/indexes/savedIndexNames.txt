@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+/home/ns40/Documents/Practice/eva/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2778542707.index
+2772780103.index
+217654646.index
+3873958004.index

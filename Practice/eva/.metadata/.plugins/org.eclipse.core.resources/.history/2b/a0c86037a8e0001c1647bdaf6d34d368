@@ -1,0 +1,1604 @@
+package com.innsight.analysis.vo;
+ 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
+public class TweeterActionVo implements  Serializable 
+{
+	private static final long serialVersionUID = 1L;
+	private String sourceFilter;
+	
+	private String rowNum;
+	private String keywordFilter;
+	private String keywordFilter1;
+	private String exactKeywordFilter;
+	private String searchType;
+	private String hashTagFilter;
+	private String hashTagNotFilter; 
+	private String themeFilter;
+	private String themeNotFilter;
+	private String domainFilter;
+	private String domainNotFilter;
+	private String linkFilter;
+	private String linkNotFilter;
+	private String mediaFilter;
+	private String dateFrom; 
+	private String dateTo; 
+	private String dateFromGrph; 
+	private String dateToGrph; 
+	private String entityId;
+	private String advFilter;
+	private String isMap;
+	private String isUserMap;
+	private String userFilter; 
+	private String userFilter1; 
+	private String userIdFilter;
+	private String retweetUserFilter; 
+	private String retweetUserNotFilter;
+	private String userNotFilter;
+	private String timeZoneFilter;
+	private String timeZoneNotFilter;
+	private String mentionFilter;
+	private String mentionNotFilter;
+	private String sentimentFilter;
+	private String readFilter;
+	private String allTweetFilter;
+	private String followUpFilter;
+	private String priorityFilter;
+	private String twSortFilter;
+	private String userSortFilter;
+	private String keywordFilter2;
+	private String isDashBord;
+	private String mediaType;
+	private String userScreenName;
+	private String tweetId;
+	private String tweetIdFlag;
+	private String priority;
+	private String articleIdFilter;
+	private String articleTitleHash;
+	private String odsProfileFilter;
+	private String odsProfileNotFilter;
+	private String odsPostFilter;
+	private String odsPostNotFilter;
+	private String ocrPostFilter;
+	private String ocrPostNotFilter;
+	private String isRpt;
+	private String noTweet;
+	private String noHashtag;
+	private String noUser;
+	private String noMention;
+	private String noDomain;
+	private String noMedia;
+	private String noLinks;
+	private String noThemes;
+	private String noCountry;
+	private String noCity;
+	private String noLanguage;
+	private String noMobile;
+	private String noEmail;
+	private String noEvent;
+	private String noTaxonomy; 
+	private String noIpAddress; 
+	private String noPinCode;
+	private String noVehicleNo;
+	private String noDebitCreditCardNo;
+	private String noTime; 
+	private String noBankAccountNo;
+	private String noSentiment;
+	private String noClassification;
+	private String caseId;
+	private String userName;
+	private String influenceType;
+	private String latitude;
+	private String longitude;
+	private String type; 
+	private String fbType;
+	private String apiType;
+	private String chkBoxId; 
+	private String max;
+	private String min;
+	private String countryCode;
+	private ArrayList<String> entityIds;
+	private ArrayList<MultipleEntryVo> multipleEntityId;
+
+	private String hashTagSortOrder="cntdesc";
+	private String mentionSortOrder="cntdesc";
+	private String domainSortOrder="cntdesc";
+	private String urlSortOrder="cntdesc";
+	private String imageSortOrder="cntdesc";
+	private String videoSortOrder="cntdesc";
+	private String nerSortOrder="cntdesc";
+	private String themeSortOrder="cntdesc";
+	private String countrySortOrder="cntdesc";
+	private String citySortOrder="cntdesc";
+	private String langSortOrder="cntdesc";
+	private String emailSortOrder="cntdesc";
+	private String mobileSortOrder="cntdesc";
+	private String eventSortOrder="cntdesc";
+	private String taxonomySortOrder="cntdesc"; 
+	private String ipAddressSortOrder="cntdesc"; 
+	private String pinCodeSortOrder="cntdesc";
+	private String vehicleNoSortOrder="cntdesc"; 
+	private String debitCreditCardNoSortOrder="cntdesc";
+	private String timeSortOrder="cntdesc";
+	private String bankAccountNoSortOrder="cntdesc";
+	private String authorCountrySortOrder="cntdesc"; 
+	private String authorCitySortOrder="cntdesc";
+	private String mediaUrl;
+    
+	private	String orgFilter;
+	private	String orgNotFilter;
+	private	String locationFilter;
+	private	String locationNotFilter;
+	private	String personFilter;
+	private	String personNotFilter;
+	private	String nerDateFilter;
+	private	String nerDateNotFilter;
+	private String noArt;
+	private	String noSrc;
+	private	String noAthr;
+	private	String noPer;
+	private	String noPlace;
+	private	String noOrg;
+	private	String noNerDate;
+	private String source;
+	private String sourceNot;
+	private String imgFilter;
+	private String imgNotFilter;
+	private String videoFilter;
+	private String videoNotFilter;
+	private String audioFilter;
+	private String audioNotFilter;
+	private String groupFilter;
+	private String groupNotFilter;
+	private String viralTextFilter;
+	private String viralTextNotFilter;
+	private String docTypeFilter;
+	private String docTypeNotFilter;
+	private String whatsAppMsgReceiverTypeFilter;
+	private String whatsAppMediaTypeFilter;
+	private String whatsAppGroupAdminFilter;
+	private String whatsAppGroupAdminNotFilter;
+	
+	private String cityFilter;
+	private String cityNotFilter;
+	private String countryFilter;
+	private String countryNotFilter;
+	private String langFilter;
+	private String langNotFilter;
+	private String mobileFilter;
+	private String mobileNotFilter;
+	private String emailFilter;
+	private String emailNotFilter;
+	private String eventFilter;
+	private String eventNotFilter;
+	private String taxonomyFilter;
+	private String taxonomyNotFilter;
+	private String authorCountryFilter; 
+	private String authorCountryNotFilter; 
+	private String authorCityFilter;
+	private String authorCityNotFilter;
+	private String isAll;
+    private String twUserCountryCode;
+    private String isGeoSearch;
+    private ArrayList<ArrayList<LocationPoints>> geoPolygon;
+    private ArrayList<ArrayList<LocationPoints>> geoPolygonNot;
+    private ArrayList<ArrayList<LocationPoints>> geoUserPolygon;
+    private ArrayList<ArrayList<LocationPoints>> geoUserPolygonNot;
+	private String componentType;
+	private String componentKeyword;
+	private String isComponent;
+    private String classificationFilter;
+    private String classificationNotFilter;
+    private String emotionFilter;
+    private String threatMatrixFilter;
+    private String attrName;
+    private String dateFrom2;
+    private String dateTo2;
+    private String userCreatedDateFrom;
+    private String userCreatedDateTo;
+    private ArrayList<String> keywordGlobalFilter;
+    private ArrayList<String> locationGlobalFilter;
+    private ArrayList<String> countMediaArticles;
+    private ArrayList<String> fbFriendsByCountry; 
+    private ArrayList<String> fbFriendsByCity;
+	private ArrayList<LinkedHashMap<String, String>> profileGlobalFilter;
+	private ArrayList<LinkedHashMap<String, String>> profileGlobalFilterLinkAnalysis;	
+    private String userSearchKeyword;
+    private String rssCountryCode;
+    private String profileBool;
+    private String wtDeviceId; 
+    private String wtDevicePhoneNo; 
+    private String wtGroupId; 
+    private String wtContactId;
+    private String articleNewsSource;
+    private String wordCloud;
+    private String articlePriority;
+    private String articleNewsCategory; 
+    private String isView="n";
+    private String twUserType; 
+    private String fbUserProfileFilter;
+    private String exportWidgetType;
+    private String documentCount;
+    private String timeFilter;
+    
+    private String geoDistance;
+    private String geoPoint;
+    private String onlyCount="";
+    
+    
+    public String getOnlyCount() {
+		return onlyCount;
+	}
+	public void setOnlyCount(String onlyCount) {
+		this.onlyCount = onlyCount;
+	}
+	public String getGeoDistance() {
+		return geoDistance;
+	}
+	public void setGeoDistance(String geoDistance) {
+		this.geoDistance = geoDistance;
+	}
+	public String getGeoPoint() {
+		return geoPoint;
+	}
+	public void setGeoPoint(String geoPoint) {
+		this.geoPoint = geoPoint;
+	}
+	public String getTimeFilter() {
+		return timeFilter;
+	}
+	public void setTimeFilter(String timeFilter) {
+		this.timeFilter = timeFilter;
+	}
+    public String getDocumentCount() {
+		return documentCount;
+	}
+	public void setDocumentCount(String documentCount) {
+		this.documentCount = documentCount;
+	}
+    public String getExportWidgetType() {
+		return exportWidgetType;
+	}
+	public void setExportWidgetType(String exportWidgetType) {
+		this.exportWidgetType = exportWidgetType;
+	}
+    public String getTwUserType() {
+		return twUserType;
+	}
+	public void setTwUserType(String twUserType) {
+		this.twUserType = twUserType;
+	}
+    public String getIsView() {
+		return isView;
+	}
+	public void setIsView(String isView) {
+		this.isView = isView;
+	}
+	public String getOdsProfileFilter() {
+		return odsProfileFilter;
+	}
+	public void setOdsProfileFilter(String odsProfileFilter) {
+		this.odsProfileFilter = odsProfileFilter;
+	}
+	public String getOdsProfileNotFilter() {
+		return odsProfileNotFilter;
+	}
+	public void setOdsProfileNotFilter(String odsProfileNotFilter) {
+		this.odsProfileNotFilter = odsProfileNotFilter;
+	}
+	public String getOdsPostFilter() {
+		return odsPostFilter;
+	}
+	public void setOdsPostFilter(String odsPostFilter) {
+		this.odsPostFilter = odsPostFilter;
+	}
+	public String getOdsPostNotFilter() {
+		return odsPostNotFilter;
+	}
+	public void setOdsPostNotFilter(String odsPostNotFilter) {
+		this.odsPostNotFilter = odsPostNotFilter;
+	}
+	public String getOcrPostFilter() {
+		return ocrPostFilter;
+	}
+	public void setOcrPostFilter(String ocrPostFilter) {
+		this.ocrPostFilter = ocrPostFilter;
+	}
+	public String getOcrPostNotFilter() {
+		return ocrPostNotFilter;
+	}
+	public void setOcrPostNotFilter(String ocrPostNotFilter) {
+		this.ocrPostNotFilter = ocrPostNotFilter;
+	}
+	public String getRetweetUserFilter() {
+		return retweetUserFilter;
+	}
+	public void setRetweetUserFilter(String retweetUserFilter) {
+		this.retweetUserFilter = retweetUserFilter;
+	}
+	public String getRetweetUserNotFilter() {
+		return retweetUserNotFilter;
+	}
+	public void setRetweetUserNotFilter(String retweetUserNotFilter) {
+		this.retweetUserNotFilter = retweetUserNotFilter;
+	}
+	public String getArticlePriority() {
+		return articlePriority;
+	}
+	public void setArticlePriority(String articlePriority) {
+		this.articlePriority = articlePriority;
+	}
+	public String getArticleTitleHash() {
+		return articleTitleHash;
+	}
+	public void setArticleTitleHash(String articleTitleHash) {
+		this.articleTitleHash = articleTitleHash;
+	}
+	public String getArticleIdFilter() {
+		return articleIdFilter;
+	}
+	public void setArticleIdFilter(String articleIdFilter) {
+		this.articleIdFilter = articleIdFilter;
+	}
+	public String getWordCloud() {
+		return wordCloud;
+	}
+	public void setWordCloud(String wordCloud) {
+		this.wordCloud = wordCloud;
+	}
+	public String getWtDeviceId() {
+		return wtDeviceId;
+	}
+	public void setWtDeviceId(String wtDeviceId) {
+		this.wtDeviceId = wtDeviceId;
+	}
+	public String getWtDevicePhoneNo() {
+		return wtDevicePhoneNo;
+	}
+	public void setWtDevicePhoneNo(String wtDevicePhoneNo) {
+		this.wtDevicePhoneNo = wtDevicePhoneNo;
+	}
+	public String getWtGroupId() {
+		return wtGroupId;
+	}
+	public void setWtGroupId(String wtGroupId) {
+		this.wtGroupId = wtGroupId;
+	}
+	public String getWtContactId() {
+		return wtContactId;
+	}
+	public void setWtContactId(String wtContactId) {
+		this.wtContactId = wtContactId;
+	}	
+	public ArrayList<String> getFbFriendsByCountry() {
+		return fbFriendsByCountry;
+	}
+	public void setFbFriendsByCountry(ArrayList<String> fbFriendsByCountry) {
+		this.fbFriendsByCountry = fbFriendsByCountry;
+	}
+	public ArrayList<String> getFbFriendsByCity() {
+		return fbFriendsByCity;
+	}	
+	public void setFbFriendsByCity(ArrayList<String> fbFriendsByCity) {
+		this.fbFriendsByCity = fbFriendsByCity;
+	}
+	public String getUserCreatedDateFrom() {
+		return userCreatedDateFrom;
+	}
+	public void setUserCreatedDateFrom(String userCreatedDateFrom) {
+		this.userCreatedDateFrom = userCreatedDateFrom;
+	}
+	public String getUserCreatedDateTo() {
+		return userCreatedDateTo;
+	}
+	public void setUserCreatedDateTo(String userCreatedDateTo) {
+		this.userCreatedDateTo = userCreatedDateTo;
+	}
+	public String getDateFrom2() {
+		return dateFrom2;
+	}
+	public void setDateFrom2(String dateFrom2) {
+		this.dateFrom2 = dateFrom2;
+	}
+	public String getDateTo2() {
+		return dateTo2;
+	}
+	public void setDateTo2(String dateTo2) {
+		this.dateTo2 = dateTo2;
+	}
+	public String getAttrName() {
+		return attrName;
+	}
+	public void setAttrName(String attrName) {
+		this.attrName = attrName;
+	}
+	public String getNoMobile() {
+		return noMobile;
+	}
+	public void setNoMobile(String noMobile) {
+		this.noMobile = noMobile;
+	}
+	public String getNoEmail() {
+		return noEmail;
+	}
+	public void setNoEmail(String noEmail) {
+		this.noEmail = noEmail;
+	}
+	public String getEmailSortOrder() {
+		return emailSortOrder;
+	}
+	public void setEmailSortOrder(String emailSortOrder) {
+		this.emailSortOrder = emailSortOrder;
+	}
+	public String getMobileSortOrder() {
+		return mobileSortOrder;
+	}
+	public void setMobileSortOrder(String mobileSortOrder) {
+		this.mobileSortOrder = mobileSortOrder;
+	}
+	public String getMobileFilter() {
+		return mobileFilter;
+	}
+	public void setMobileFilter(String mobileFilter) {
+		this.mobileFilter = mobileFilter;
+	}
+	public String getMobileNotFilter() {
+		return mobileNotFilter;
+	}
+	public void setMobileNotFilter(String mobileNotFilter) {
+		this.mobileNotFilter = mobileNotFilter;
+	}
+	public String getEmailFilter() {
+		return emailFilter;
+	}
+	public void setEmailFilter(String emailFilter) {
+		this.emailFilter = emailFilter;
+	}
+	public String getEmailNotFilter() {
+		return emailNotFilter;
+	}
+	public void setEmailNotFilter(String emailNotFilter) {
+		this.emailNotFilter = emailNotFilter;
+	}
+	public String getNerDateFilter() {
+		return nerDateFilter;
+	}
+	public void setNerDateFilter(String nerDateFilter) {
+		this.nerDateFilter = nerDateFilter;
+	}
+	public String getNerDateNotFilter() {
+		return nerDateNotFilter;
+	}
+	public void setNerDateNotFilter(String nerDateNotFilter) {
+		this.nerDateNotFilter = nerDateNotFilter;
+	}
+	public String getNoNerDate() {
+		return noNerDate;
+	}
+	public void setNoNerDate(String noNerDate) {
+		this.noNerDate = noNerDate;
+	}
+	public String getEmotionFilter() {
+		return emotionFilter;
+	}
+	public void setEmotionFilter(String emotionFilter) {
+		this.emotionFilter = emotionFilter;
+	}
+	public String getThreatMatrixFilter() {
+		return threatMatrixFilter;
+	}
+	public void setThreatMatrixFilter(String threatMatrixFilter) {
+		this.threatMatrixFilter = threatMatrixFilter;
+	}
+	public String getThemeFilter() {
+		return themeFilter;
+	}
+	public void setThemeFilter(String themeFilter) {
+		this.themeFilter = themeFilter;
+	}
+	public String getThemeNotFilter() {
+		return themeNotFilter;
+	}
+	public void setThemeNotFilter(String themeNotFilter) {
+		this.themeNotFilter = themeNotFilter;
+	}
+	public String getNoThemes() {
+		return noThemes;
+	}
+	public void setNoThemes(String noThemes) {
+		this.noThemes = noThemes;
+	}
+	public String getThemeSortOrder() {
+		return themeSortOrder;
+	}
+	public void setThemeSortOrder(String themeSortOrder) {
+		this.themeSortOrder = themeSortOrder;
+	}
+	public String getUserIdFilter() {
+		return userIdFilter;
+	}
+	public void setUserIdFilter(String userIdFilter) {
+		this.userIdFilter = userIdFilter;
+	}
+	public String getClassificationFilter() {
+		return classificationFilter;
+	}
+	public void setClassificationFilter(String classificationFilter) {
+		this.classificationFilter = classificationFilter;
+	}
+	public String getClassificationNotFilter() {
+		return classificationNotFilter;
+	}
+	public void setClassificationNotFilter(String classificationNotFilter) {
+		this.classificationNotFilter = classificationNotFilter;
+	}
+	public String getIsComponent() {
+		return isComponent;
+	}
+	public void setIsComponent(String isComponent) {
+		this.isComponent = isComponent;
+	}
+	public String getComponentType() {
+		return componentType;
+	}
+	public void setComponentType(String componentType) {
+		this.componentType = componentType;
+	}
+	public String getComponentKeyword() {
+		return componentKeyword;
+	}
+	public void setComponentKeyword(String componentKeyword) {
+		this.componentKeyword = componentKeyword;
+	}
+	public ArrayList<ArrayList<LocationPoints>> getGeoPolygon() {
+		return geoPolygon;
+	}
+	public void setGeoPolygon(ArrayList<ArrayList<LocationPoints>> geoPolygon) {
+		this.geoPolygon = geoPolygon;
+	}
+	public ArrayList<ArrayList<LocationPoints>> getGeoPolygonNot() {
+		return geoPolygonNot;
+	}
+	public void setGeoPolygonNot(ArrayList<ArrayList<LocationPoints>> geoPolygonNot) {
+		this.geoPolygonNot = geoPolygonNot;
+	}
+	public ArrayList<ArrayList<LocationPoints>> getGeoUserPolygon() {
+		return geoUserPolygon;
+	}
+	public void setGeoUserPolygon(ArrayList<ArrayList<LocationPoints>> geoUserPolygon) {
+		this.geoUserPolygon = geoUserPolygon;
+	}
+	public ArrayList<ArrayList<LocationPoints>> getGeoUserPolygonNot() {
+		return geoUserPolygonNot;
+	}
+	public void setGeoUserPolygonNot(ArrayList<ArrayList<LocationPoints>> geoUserPolygonNot) {
+		this.geoUserPolygonNot = geoUserPolygonNot;
+	}
+	public String getIsAll() {
+		return isAll;
+	}
+	public void setIsAll(String isAll) {
+		this.isAll = isAll;
+	}
+	public String getImgFilter() {
+		return imgFilter;
+	}
+	public void setImgFilter(String imgFilter) {
+		this.imgFilter = imgFilter;
+	}
+	public String getImgNotFilter() {
+		return imgNotFilter;
+	}
+	public void setImgNotFilter(String imgNotFilter) {
+		this.imgNotFilter = imgNotFilter;
+	}
+	public String getVideoFilter() {
+		return videoFilter;
+	}
+	public void setVideoFilter(String videoFilter) {
+		this.videoFilter = videoFilter;
+	}
+	public String getVideoNotFilter() {
+		return videoNotFilter;
+	}
+	public void setVideoNotFilter(String videoNotFilter) {
+		this.videoNotFilter = videoNotFilter;
+	}
+	public String getAudioFilter() {
+		return audioFilter;
+	}
+	public void setAudioFilter(String audioFilter) {
+		this.audioFilter = audioFilter;
+	}
+	public String getAudioNotFilter() {
+		return audioNotFilter;
+	}
+	public void setAudioNotFilter(String audioNotFilter) {
+		this.audioNotFilter = audioNotFilter;
+	}
+	public String getGroupFilter() {
+		return groupFilter;
+	}
+	public void setGroupFilter(String groupFilter) {
+		this.groupFilter = groupFilter;
+	}
+	public String getGroupNotFilter() {
+		return groupNotFilter;
+	}
+	public void setGroupNotFilter(String groupNotFilter) {
+		this.groupNotFilter = groupNotFilter;
+	}
+	public String getViralTextFilter() {
+		return viralTextFilter;
+	}
+	public void setViralTextFilter(String viralTextFilter) {
+		this.viralTextFilter = viralTextFilter;
+	}
+	public String getViralTextNotFilter() {
+		return viralTextNotFilter;
+	}
+	public void setViralTextNotFilter(String viralTextNotFilter) {
+		this.viralTextNotFilter = viralTextNotFilter;
+	}
+	public String getDocTypeFilter() {
+		return docTypeFilter;
+	}
+	public void setDocTypeFilter(String docTypeFilter) {
+		this.docTypeFilter = docTypeFilter;
+	}
+	public String getDocTypeNotFilter() {
+		return docTypeNotFilter;
+	}
+	public void setDocTypeNotFilter(String docTypeNotFilter) {
+		this.docTypeNotFilter = docTypeNotFilter;
+	}
+	public String getWhatsAppMsgReceiverTypeFilter() {
+		return whatsAppMsgReceiverTypeFilter;
+	}
+	public void setWhatsAppMsgReceiverTypeFilter(String whatsAppMsgReceiverTypeFilter) {
+		this.whatsAppMsgReceiverTypeFilter = whatsAppMsgReceiverTypeFilter;
+	}
+	public String getWhatsAppMediaTypeFilter() {
+		return whatsAppMediaTypeFilter;
+	}
+	public void setWhatsAppMediaTypeFilter(String whatsAppMediaTypeFilter) {
+		this.whatsAppMediaTypeFilter = whatsAppMediaTypeFilter;
+	}
+	public String getWhatsAppGroupAdminFilter() {
+		return whatsAppGroupAdminFilter;
+	}
+	public void setWhatsAppGroupAdminFilter(String whatsAppGroupAdminFilter) {
+		this.whatsAppGroupAdminFilter = whatsAppGroupAdminFilter;
+	}
+	public String getWhatsAppGroupAdminNotFilter() {
+		return whatsAppGroupAdminNotFilter;
+	}
+	public void setWhatsAppGroupAdminNotFilter(String whatsAppGroupAdminNotFilter) {
+		this.whatsAppGroupAdminNotFilter = whatsAppGroupAdminNotFilter;
+	}
+	public String getNerSortOrder() {
+		return nerSortOrder;
+	}
+	public void setNerSortOrder(String nerSortOrder) {
+		this.nerSortOrder = nerSortOrder;
+	}
+	public String getOrgFilter() {
+		return orgFilter;
+	}
+	public void setOrgFilter(String orgFilter) {
+		this.orgFilter = orgFilter;
+	}
+	public String getOrgNotFilter() {
+		return orgNotFilter;
+	}
+	public void setOrgNotFilter(String orgNotFilter) {
+		this.orgNotFilter = orgNotFilter;
+	}
+	public String getLocationFilter() {
+		return locationFilter;
+	}
+	public void setLocationFilter(String locationFilter) {
+		this.locationFilter = locationFilter;
+	}
+	public String getLocationNotFilter() {
+		return locationNotFilter;
+	}
+	public void setLocationNotFilter(String locationNotFilter) {
+		this.locationNotFilter = locationNotFilter;
+	}
+	public String getPersonFilter() {
+		return personFilter;
+	}
+	public void setPersonFilter(String personFilter) {
+		this.personFilter = personFilter;
+	}
+	public String getPersonNotFilter() {
+		return personNotFilter;
+	}
+	public void setPersonNotFilter(String personNotFilter) {
+		this.personNotFilter = personNotFilter;
+	}
+	public String getNoArt() {
+		return noArt;
+	}
+	public void setNoArt(String noArt) {
+		this.noArt = noArt;
+	}
+	public String getNoSrc() {
+		return noSrc;
+	}
+	public void setNoSrc(String noSrc) {
+		this.noSrc = noSrc;
+	}
+	public String getNoAthr() {
+		return noAthr;
+	}
+	public void setNoAthr(String noAthr) {
+		this.noAthr = noAthr;
+	}
+	public String getNoPer() {
+		return noPer;
+	}
+	public void setNoPer(String noPer) {
+		this.noPer = noPer;
+	}
+	public String getNoPlace() {
+		return noPlace;
+	}
+	public void setNoPlace(String noPlace) {
+		this.noPlace = noPlace;
+	}
+	public String getNoOrg() {
+		return noOrg;
+	}
+	public void setNoOrg(String noOrg) {
+		this.noOrg = noOrg;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
+	public String getSourceNot() {
+		return sourceNot;
+	}
+	public void setSourceNot(String sourceNot) {
+		this.sourceNot = sourceNot;
+	}
+	
+	public String getHashTagSortOrder() {
+		return hashTagSortOrder;
+	}
+	public void setHashTagSortOrder(String hashTagSortOrder) {
+		this.hashTagSortOrder = hashTagSortOrder;
+	}
+	public String getMentionSortOrder() {
+		return mentionSortOrder;
+	}
+	public void setMentionSortOrder(String mentionSortOrder) {
+		this.mentionSortOrder = mentionSortOrder;
+	}
+	public String getDomainSortOrder() {
+		return domainSortOrder;
+	}
+	public void setDomainSortOrder(String domainSortOrder) {
+		this.domainSortOrder = domainSortOrder;
+	}
+	public String getUrlSortOrder() {
+		return urlSortOrder;
+	}
+	public void setUrlSortOrder(String urlSortOrder) {
+		this.urlSortOrder = urlSortOrder;
+	}
+	public String getImageSortOrder() {
+		return imageSortOrder;
+	}
+	public void setImageSortOrder(String imageSortOrder) {
+		this.imageSortOrder = imageSortOrder;
+	}
+	public String getVideoSortOrder() {
+		return videoSortOrder;
+	}
+	public void setVideoSortOrder(String videoSortOrder) {
+		this.videoSortOrder = videoSortOrder;
+	}
+	public String getMediaUrl() {
+		return mediaUrl;
+	}
+	public void setMediaUrl(String mediaUrl) {
+		this.mediaUrl = mediaUrl;
+	}
+	public ArrayList<String> getEntityIds() {
+		return entityIds;
+	}
+	public void setEntityIds(ArrayList<String> entityIds) {
+		this.entityIds = entityIds;
+	}
+	public String getCountryCode() {
+		return countryCode;
+	}
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+	public String getUserFilter1() {
+		return userFilter1;
+	}
+	public void setUserFilter1(String userFilter1) {
+		this.userFilter1 = userFilter1;
+	}
+	public String getKeywordFilter1() {
+		return keywordFilter1;
+	}
+	public void setKeywordFilter1(String keywordFilter1) {
+		this.keywordFilter1 = keywordFilter1;
+	}
+	public String getExactKeywordFilter() {
+		return exactKeywordFilter;
+	}
+	public void setExactKeywordFilter(String exactKeywordFilter) {
+		this.exactKeywordFilter = exactKeywordFilter;
+	}
+	public String getSearchType() {
+		return searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+	public String getMax() {
+		return max;
+	}
+	public void setMax(String max) {
+		this.max = max;
+	}
+	public String getMin() {
+		return min;
+	}
+	public void setMin(String min) {
+		this.min = min;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	public String getChkBoxId() {
+		return chkBoxId;
+	}
+	public void setChkBoxId(String chkBoxId) {
+		this.chkBoxId = chkBoxId;
+	}
+	public String getApiType() {
+		return apiType;
+	}
+	public void setApiType(String apiType) {
+		this.apiType = apiType;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getFbType() {
+		return fbType;
+	}
+	public void setFbType(String fbType) {
+		this.fbType = fbType;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	public String getInfluenceType() {
+		return influenceType;
+	}
+	public void setInfluenceType(String influenceType) {
+		this.influenceType = influenceType;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getCaseId() {
+		return caseId;
+	}
+	public void setCaseId(String caseId) {
+		this.caseId = caseId;
+	}
+	public String getIsRpt() {
+		return isRpt;
+	}
+	public void setIsRpt(String isRpt) {
+		this.isRpt = isRpt;
+	}
+
+	public String getNoTweet() {
+		return noTweet;
+	}
+	public void setNoTweet(String noTweet) {
+		this.noTweet = noTweet;
+	}
+	public String getNoHashtag() {
+		return noHashtag;
+	}
+	public void setNoHashtag(String noHashtag) {
+		this.noHashtag = noHashtag;
+	}
+	public String getNoUser() {
+		return noUser;
+	}
+	public void setNoUser(String noUser) {
+		this.noUser = noUser;
+	}
+	public String getNoMention() {
+		return noMention;
+	}
+	public void setNoMention(String noMention) {
+		this.noMention = noMention;
+	}
+	public String getNoDomain() {
+		return noDomain;
+	}
+	public void setNoDomain(String noDomain) {
+		this.noDomain = noDomain;
+	}
+	public String getNoMedia() {
+		return noMedia;
+	}
+	public void setNoMedia(String noMedia) {
+		this.noMedia = noMedia;
+	}
+	public String getNoLinks() {
+		return noLinks;
+	}
+	public void setNoLinks(String noLinks) {
+		this.noLinks = noLinks;
+	}
+	public String getPriority() {
+		return priority;
+	}
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
+	public String getTimeZoneFilter() {
+		return timeZoneFilter;
+	}
+	public void setTimeZoneFilter(String timeZoneFilter) {
+		this.timeZoneFilter = timeZoneFilter;
+	}
+	public String getTimeZoneNotFilter() {
+		return timeZoneNotFilter;
+	}
+	public void setTimeZoneNotFilter(String timeZoneNotFilter) {
+		this.timeZoneNotFilter = timeZoneNotFilter;
+	}
+	public String getMentionFilter() {
+		return mentionFilter;
+	}
+	public void setMentionFilter(String mentionFilter) {
+		this.mentionFilter = mentionFilter;
+	}
+	public String getMentionNotFilter() {
+		return mentionNotFilter;
+	}
+	public void setMentionNotFilter(String mentionNotFilter) {
+		this.mentionNotFilter = mentionNotFilter;
+	}
+	public String getDomainFilter() {
+		return domainFilter;
+	}
+	public void setDomainFilter(String domainFilter) {
+		this.domainFilter = domainFilter;
+	}
+	public String getDomainNotFilter() {
+		return domainNotFilter;
+	}
+	public void setDomainNotFilter(String domainNotFilter) {
+		this.domainNotFilter = domainNotFilter;
+	}
+	public String getLinkNotFilter() {
+		return linkNotFilter;
+	}
+	public void setLinkNotFilter(String linkNotFilter) {
+		this.linkNotFilter = linkNotFilter;
+	}
+	public String getUserNotFilter() {
+		return userNotFilter;
+	}
+	public void setUserNotFilter(String userNotFilter) {
+		this.userNotFilter = userNotFilter;
+	}
+	public String getHashTagNotFilter() {
+		return hashTagNotFilter;
+	}
+	public void setHashTagNotFilter(String hashTagNotFilter) {
+		this.hashTagNotFilter = hashTagNotFilter;
+	}
+	public String getTweetIdFlag() {
+		return tweetIdFlag;
+	}
+	public void setTweetIdFlag(String tweetIdFlag) {
+		this.tweetIdFlag = tweetIdFlag;
+	}
+	public String getTweetId() {
+		return tweetId;
+	}
+	public void setTweetId(String tweetId) {
+		this.tweetId = tweetId;
+	}
+	public String getUserScreenName() {
+		return userScreenName;
+	}
+	public void setUserScreenName(String userScreenName) {
+		this.userScreenName = userScreenName;
+	}
+	public String getMediaType() {
+		return mediaType;
+	}
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
+	}
+	public String getIsDashBord() {
+		return isDashBord;
+	}
+	public void setIsDashBord(String isDashBord) {
+		this.isDashBord = isDashBord;
+	}
+	public String getKeywordFilter2() {
+		return keywordFilter2;
+	}
+	public void setKeywordFilter2(String keywordFilter2) {
+		this.keywordFilter2 = keywordFilter2;
+	}
+	public String getRowNum() {
+		return rowNum;
+	}
+	public void setRowNum(String rowNum) {
+		this.rowNum = rowNum;
+	}
+	public String getKeywordFilter() {
+		return keywordFilter;
+	}
+	public void setKeywordFilter(String keywordFilter) {
+		this.keywordFilter = keywordFilter;
+	}
+	public String getHashTagFilter() {
+		return hashTagFilter;
+	}
+	public void setHashTagFilter(String hashTagFilter) {
+		this.hashTagFilter = hashTagFilter;
+	}
+	public String getLinkFilter() {
+		return linkFilter;
+	}
+	public void setLinkFilter(String linkFilter) {
+		this.linkFilter = linkFilter;
+	}
+	public String getMediaFilter() {
+		return mediaFilter;
+	}
+	public void setMediaFilter(String mediaFilter) {
+		this.mediaFilter = mediaFilter;
+	}
+	public String getDateFrom() {
+		return dateFrom;
+	}
+	public void setDateFrom(String dateFrom) {
+		this.dateFrom = dateFrom;
+	}
+	public String getDateTo() {
+		return dateTo;
+	}
+	public void setDateTo(String dateTo) {
+		this.dateTo = dateTo;
+	}
+	public String getDateFromGrph() {
+		return dateFromGrph;
+	}
+	public void setDateFromGrph(String dateFromGrph) {
+		this.dateFromGrph = dateFromGrph;
+	}
+	public String getDateToGrph() {
+		return dateToGrph;
+	}
+	public void setDateToGrph(String dateToGrph) {
+		this.dateToGrph = dateToGrph;
+	}
+	public String getEntityId() {
+		return entityId;
+	}
+	public void setEntityId(String entityId) {
+		this.entityId = entityId;
+	}
+	public String getAdvFilter() {
+		return advFilter;
+	}
+	public void setAdvFilter(String advFilter) {
+		this.advFilter = advFilter;
+	}
+	public String getIsMap() {
+		return isMap;
+	}
+	public void setIsMap(String isMap) {
+		this.isMap = isMap;
+	}
+	public String getIsUserMap() {
+		return isUserMap;
+	}
+	public void setIsUserMap(String isUserMap) {
+		this.isUserMap = isUserMap;
+	}
+	public String getUserFilter() {
+		return userFilter;
+	}
+	public void setUserFilter(String userFilter) {
+		this.userFilter = userFilter;
+	}
+	public String getSentimentFilter() {
+		return sentimentFilter;
+	}
+	public void setSentimentFilter(String sentimentFilter) {
+		this.sentimentFilter = sentimentFilter;
+	}
+	public String getReadFilter() {
+		return readFilter;
+	}
+	public void setReadFilter(String readFilter) {
+		this.readFilter = readFilter;
+	}
+	public String getAllTweetFilter() {
+		return allTweetFilter;
+	}
+	public void setAllTweetFilter(String allTweetFilter) {
+		this.allTweetFilter = allTweetFilter;
+	}
+	public String getFollowUpFilter() {
+		return followUpFilter;
+	}
+	public void setFollowUpFilter(String followUpFilter) {
+		this.followUpFilter = followUpFilter;
+	}
+	public String getPriorityFilter() {
+		return priorityFilter;
+	}
+	public void setPriorityFilter(String priorityFilter) {
+		this.priorityFilter = priorityFilter;
+	}
+	public String getTwSortFilter() {
+		return twSortFilter;
+	}
+	public void setTwSortFilter(String twSortFilter) {
+		this.twSortFilter = twSortFilter;
+	}
+	public String getUserSortFilter() {
+		return userSortFilter;
+	}
+	public void setUserSortFilter(String userSortFilter) {
+		this.userSortFilter = userSortFilter;
+	}
+	public TweeterActionVo(){}
+	public String getTwUserCountryCode() {
+		return twUserCountryCode;
+	}
+	public void setTwUserCountryCode(String twUserCountryCode) {
+		this.twUserCountryCode = twUserCountryCode;
+	}
+	public String getIsGeoSearch() {
+		return isGeoSearch;
+	}
+	public void setIsGeoSearch(String isGeoSearch) {
+		this.isGeoSearch = isGeoSearch;
+	}
+	public ArrayList<MultipleEntryVo> getMultipleEntityId() {
+		return multipleEntityId;
+	}
+	public void setMultipleEntityId(ArrayList<MultipleEntryVo> multipleEntityId) {
+		this.multipleEntityId = multipleEntityId;
+	}
+	public String getNoCountry() {
+		return noCountry;
+	}
+	public void setNoCountry(String noCountry) {
+		this.noCountry = noCountry;
+	}
+	public String getNoCity() {
+		return noCity;
+	}
+	public void setNoCity(String noCity) {
+		this.noCity = noCity;
+	}
+	public String getNoLanguage() {
+		return noLanguage;
+	}
+	public void setNoLanguage(String noLanguage) {
+		this.noLanguage = noLanguage;
+	}
+	public String getCountrySortOrder() {
+		return countrySortOrder;
+	}
+	public void setCountrySortOrder(String countrySortOrder) {
+		this.countrySortOrder = countrySortOrder;
+	}
+	public String getCitySortOrder() {
+		return citySortOrder;
+	}
+	public void setCitySortOrder(String citySortOrder) {
+		this.citySortOrder = citySortOrder;
+	}
+	public String getLangSortOrder() {
+		return langSortOrder;
+	}
+	public void setLangSortOrder(String langSortOrder) {
+		this.langSortOrder = langSortOrder;
+	}
+	public String getCityFilter() {
+		return cityFilter;
+	}
+	public void setCityFilter(String cityFilter) {
+		this.cityFilter = cityFilter;
+	}
+	public String getCityNotFilter() {
+		return cityNotFilter;
+	}
+	public void setCityNotFilter(String cityNotFilter) {
+		this.cityNotFilter = cityNotFilter;
+	}
+	public String getCountryFilter() {
+		return countryFilter;
+	}
+	public void setCountryFilter(String countryFilter) {
+		this.countryFilter = countryFilter;
+	}
+	public String getCountryNotFilter() {
+		return countryNotFilter;
+	}
+	public void setCountryNotFilter(String countryNotFilter) {
+		this.countryNotFilter = countryNotFilter;
+	}
+	public String getLangFilter() {
+		return langFilter;
+	}
+	public void setLangFilter(String langFilter) {
+		this.langFilter = langFilter;
+	}
+	public String getLangNotFilter() {
+		return langNotFilter;
+	}
+	public void setLangNotFilter(String langNotFilter) {
+		this.langNotFilter = langNotFilter;
+	}
+	public ArrayList<String> getKeywordGlobalFilter() {
+		return keywordGlobalFilter;
+	}
+	public void setKeywordGlobalFilter(ArrayList<String> keywordGlobalFilter) {
+		this.keywordGlobalFilter = keywordGlobalFilter;
+	}
+	public ArrayList<String> getLocationGlobalFilter() {
+		return locationGlobalFilter;
+	}
+	public void setLocationGlobalFilter(ArrayList<String> locationGlobalFilter) {
+		this.locationGlobalFilter = locationGlobalFilter;
+	}
+	public ArrayList<LinkedHashMap<String, String>> getProfileGlobalFilter() {
+		return profileGlobalFilter;
+	}
+	public void setProfileGlobalFilter(ArrayList<LinkedHashMap<String, String>> profileGlobalFilter) {
+		this.profileGlobalFilter = profileGlobalFilter;
+	}
+	public ArrayList<LinkedHashMap<String, String>> getProfileGlobalFilterLinkAnalysis() {
+		return profileGlobalFilterLinkAnalysis;
+	}
+	public void setProfileGlobalFilterLinkAnalysis(
+			ArrayList<LinkedHashMap<String, String>> profileGlobalFilterLinkAnalysis) {
+		this.profileGlobalFilterLinkAnalysis = profileGlobalFilterLinkAnalysis;
+	}
+	public String getUserSearchKeyword() {
+		return userSearchKeyword;
+	}
+	public void setUserSearchKeyword(String userSearchKeyword) {
+		this.userSearchKeyword = userSearchKeyword;
+	}
+	public String getRssCountryCode() {
+		return rssCountryCode;
+	}
+	public void setRssCountryCode(String rssCountryCode) {
+		this.rssCountryCode = rssCountryCode;
+	}
+	public String getProfileBool() {
+		return profileBool;
+	}
+	public void setProfileBool(String profileBool) {
+		this.profileBool = profileBool;
+	}
+	public String getEventSortOrder() {
+		return eventSortOrder;
+	}
+	public void setEventSortOrder(String eventSortOrder) {
+		this.eventSortOrder = eventSortOrder;
+	}
+	public String getTaxonomySortOrder() {
+		return taxonomySortOrder;
+	}
+	public void setTaxonomySortOrder(String taxonomySortOrder) {
+		this.taxonomySortOrder = taxonomySortOrder;
+	}
+	public String getIpAddressSortOrder() {
+		return ipAddressSortOrder;
+	}
+	public void setIpAddressSortOrder(String ipAddressSortOrder) {
+		this.ipAddressSortOrder = ipAddressSortOrder;
+	}
+	public String getPinCodeSortOrder() {
+		return pinCodeSortOrder;
+	}
+	public void setPinCodeSortOrder(String pinCodeSortOrder) {
+		this.pinCodeSortOrder = pinCodeSortOrder;
+	}
+	public String getVehicleNoSortOrder() {
+		return vehicleNoSortOrder;
+	}
+	public void setVehicleNoSortOrder(String vehicleNoSortOrder) {
+		this.vehicleNoSortOrder = vehicleNoSortOrder;
+	}
+	public String getDebitCreditCardNoSortOrder() {
+		return debitCreditCardNoSortOrder;
+	}
+	public void setDebitCreditCardNoSortOrder(String debitCreditCardNoSortOrder) {
+		this.debitCreditCardNoSortOrder = debitCreditCardNoSortOrder;
+	}
+	public String getTimeSortOrder() {
+		return timeSortOrder;
+	}
+	public void setTimeSortOrder(String timeSortOrder) {
+		this.timeSortOrder = timeSortOrder;
+	}
+	public String getBankAccountNoSortOrder() {
+		return bankAccountNoSortOrder;
+	}
+	public void setBankAccountNoSortOrder(String bankAccountNoSortOrder) {
+		this.bankAccountNoSortOrder = bankAccountNoSortOrder;
+	}
+	
+	public String getNoEvent() {
+		return noEvent;
+	}
+	public void setNoEvent(String noEvent) {
+		this.noEvent = noEvent;
+	}
+	public String getNoTaxonomy() {
+		return noTaxonomy;
+	}
+	public void setNoTaxonomy(String noTaxonomy) {
+		this.noTaxonomy = noTaxonomy;
+	}
+	public String getNoIpAddress() {
+		return noIpAddress;
+	}
+	public void setNoIpAddress(String noIpAddress) {
+		this.noIpAddress = noIpAddress;
+	}
+	public String getNoPinCode() {
+		return noPinCode;
+	}
+	public void setNoPinCode(String noPinCode) {
+		this.noPinCode = noPinCode;
+	}
+	public String getNoVehicleNo() {
+		return noVehicleNo;
+	}
+	public void setNoVehicleNo(String noVehicleNo) {
+		this.noVehicleNo = noVehicleNo;
+	}
+	public String getNoDebitCreditCardNo() {
+		return noDebitCreditCardNo;
+	}
+	public void setNoDebitCreditCardNo(String noDebitCreditCardNo) {
+		this.noDebitCreditCardNo = noDebitCreditCardNo;
+	}
+	public String getNoTime() {
+		return noTime;
+	}
+	public void setNoTime(String noTime) {
+		this.noTime = noTime;
+	}
+	public String getNoBankAccountNo() {
+		return noBankAccountNo;
+	}
+	public void setNoBankAccountNo(String noBankAccountNo) {
+		this.noBankAccountNo = noBankAccountNo;
+	}
+	
+	public String getEventFilter() {
+		return eventFilter;
+	}
+	public void setEventFilter(String eventFilter) {
+		this.eventFilter = eventFilter;
+	}
+	public String getEventNotFilter() {
+		return eventNotFilter;
+	}
+	public void setEventNotFilter(String eventNotFilter) {
+		this.eventNotFilter = eventNotFilter;
+	}
+	public String getTaxonomyFilter() {
+		return taxonomyFilter;
+	}
+	public void setTaxonomyFilter(String taxonomyFilter) {
+		this.taxonomyFilter = taxonomyFilter;
+	}
+	public String getTaxonomyNotFilter() {
+		return taxonomyNotFilter;
+	}
+	public void setTaxonomyNotFilter(String taxonomyNotFilter) {
+		this.taxonomyNotFilter = taxonomyNotFilter;
+	}
+	public String getAuthorCountryFilter() {
+		return authorCountryFilter;
+	}
+	public void setAuthorCountryFilter(String authorCountryFilter) {
+		this.authorCountryFilter = authorCountryFilter;
+	}
+	public String getAuthorCountryNotFilter() {
+		return authorCountryNotFilter;
+	}
+	public void setAuthorCountryNotFilter(String authorCountryNotFilter) {
+		this.authorCountryNotFilter = authorCountryNotFilter;
+	}
+	public String getAuthorCityFilter() {
+		return authorCityFilter;
+	}
+	public void setAuthorCityFilter(String authorCityFilter) {
+		this.authorCityFilter = authorCityFilter;
+	}
+	public String getAuthorCityNotFilter() {
+		return authorCityNotFilter;
+	}
+	public void setAuthorCityNotFilter(String authorCityNotFilter) {
+		this.authorCityNotFilter = authorCityNotFilter;
+	}
+	public String getAuthorCountrySortOrder() {
+		return authorCountrySortOrder;
+	}
+	public void setAuthorCountrySortOrder(String authorCountrySortOrder) {
+		this.authorCountrySortOrder = authorCountrySortOrder;
+	}
+	public String getAuthorCitySortOrder() {
+		return authorCitySortOrder;
+	}
+	public void setAuthorCitySortOrder(String authorCitySortOrder) {
+		this.authorCitySortOrder = authorCitySortOrder;
+	}
+	public String getArticleNewsSource() {
+		return articleNewsSource;
+	}
+	public void setArticleNewsSource(String articleNewsSource) {
+		this.articleNewsSource = articleNewsSource;
+	}
+    public ArrayList<String> getCountMediaArticles() {
+		return countMediaArticles;
+	}
+	public void setCountMediaArticles(ArrayList<String> countMediaArticles) {
+		this.countMediaArticles = countMediaArticles;
+	}
+	public String getArticleNewsCategory() {
+		return articleNewsCategory;
+	}
+	public void setArticleNewsCategory(String articleNewsCategory) {
+		this.articleNewsCategory = articleNewsCategory;
+	}
+	public String getNoSentiment() {
+		return noSentiment;
+	}
+	public void setNoSentiment(String noSentiment) {
+		this.noSentiment = noSentiment;
+	}
+	public String getNoClassification() {
+		return noClassification;
+	}
+	public void setNoClassification(String noClassification) {
+		this.noClassification = noClassification;
+	}
+	public String getFbUserProfileFilter() {
+		return fbUserProfileFilter;
+	}
+	public void setFbUserProfileFilter(String fbUserProfileFilter) {
+		this.fbUserProfileFilter = fbUserProfileFilter;
+	}
+	@Override
+	public String toString() {
+		return "TweeterActionVo [rowNum=" + rowNum + ", keywordFilter=" + keywordFilter + ", keywordFilter1="
+				+ keywordFilter1 + ", exactKeywordFilter=" + exactKeywordFilter + ", searchType=" + searchType
+				+ ", hashTagFilter=" + hashTagFilter + ", hashTagNotFilter=" + hashTagNotFilter + ", themeFilter="
+				+ themeFilter + ", themeNotFilter=" + themeNotFilter + ", domainFilter=" + domainFilter
+				+ ", domainNotFilter=" + domainNotFilter + ", linkFilter=" + linkFilter + ", linkNotFilter="
+				+ linkNotFilter + ", mediaFilter=" + mediaFilter + ", dateFrom=" + dateFrom + ", dateTo=" + dateTo
+				+ ", dateFromGrph=" + dateFromGrph + ", dateToGrph=" + dateToGrph + ", entityId=" + entityId
+				+ ", advFilter=" + advFilter + ", isMap=" + isMap + ", isUserMap=" + isUserMap + ", userFilter="
+				+ userFilter + ", userFilter1=" + userFilter1 + ", userIdFilter=" + userIdFilter
+				+ ", retweetUserFilter=" + retweetUserFilter + ", retweetUserNotFilter=" + retweetUserNotFilter
+				+ ", userNotFilter=" + userNotFilter + ", timeZoneFilter=" + timeZoneFilter + ", timeZoneNotFilter="
+				+ timeZoneNotFilter + ", mentionFilter=" + mentionFilter + ", mentionNotFilter=" + mentionNotFilter
+				+ ", sentimentFilter=" + sentimentFilter + ", readFilter=" + readFilter + ", allTweetFilter="
+				+ allTweetFilter + ", followUpFilter=" + followUpFilter + ", priorityFilter=" + priorityFilter
+				+ ", twSortFilter=" + twSortFilter + ", userSortFilter=" + userSortFilter + ", keywordFilter2="
+				+ keywordFilter2 + ", isDashBord=" + isDashBord + ", mediaType=" + mediaType + ", userScreenName="
+				+ userScreenName + ", tweetId=" + tweetId + ", tweetIdFlag=" + tweetIdFlag + ", priority=" + priority
+				+ ", articleIdFilter=" + articleIdFilter + ", articleTitleHash=" + articleTitleHash
+				+ ", odsProfileFilter=" + odsProfileFilter + ", odsProfileNotFilter=" + odsProfileNotFilter
+				+ ", odsPostFilter=" + odsPostFilter + ", odsPostNotFilter=" + odsPostNotFilter + ", ocrPostFilter="
+				+ ocrPostFilter + ", ocrPostNotFilter=" + ocrPostNotFilter + ", isRpt=" + isRpt + ", noTweet=" + noTweet
+				+ ", noHashtag=" + noHashtag + ", noUser=" + noUser + ", noMention=" + noMention + ", noDomain="
+				+ noDomain + ", noMedia=" + noMedia + ", noLinks=" + noLinks + ", noThemes=" + noThemes + ", noCountry="
+				+ noCountry + ", noCity=" + noCity + ", noLanguage=" + noLanguage + ", noMobile=" + noMobile
+				+ ", noEmail=" + noEmail + ", noEvent=" + noEvent + ", noTaxonomy=" + noTaxonomy + ", noIpAddress="
+				+ noIpAddress + ", noPinCode=" + noPinCode + ", noVehicleNo=" + noVehicleNo + ", noDebitCreditCardNo="
+				+ noDebitCreditCardNo + ", noTime=" + noTime + ", noBankAccountNo=" + noBankAccountNo + ", noSentiment="
+				+ noSentiment + ", noClassification=" + noClassification + ", caseId=" + caseId + ", userName="
+				+ userName + ", influenceType=" + influenceType + ", latitude=" + latitude + ", longitude=" + longitude
+				+ ", type=" + type + ", fbType=" + fbType + ", apiType=" + apiType + ", chkBoxId=" + chkBoxId + ", max="
+				+ max + ", min=" + min + ", countryCode=" + countryCode + ", entityIds=" + entityIds
+				+ ", multipleEntityId=" + multipleEntityId + ", hashTagSortOrder=" + hashTagSortOrder
+				+ ", mentionSortOrder=" + mentionSortOrder + ", domainSortOrder=" + domainSortOrder + ", urlSortOrder="
+				+ urlSortOrder + ", imageSortOrder=" + imageSortOrder + ", videoSortOrder=" + videoSortOrder
+				+ ", nerSortOrder=" + nerSortOrder + ", themeSortOrder=" + themeSortOrder + ", countrySortOrder="
+				+ countrySortOrder + ", citySortOrder=" + citySortOrder + ", langSortOrder=" + langSortOrder
+				+ ", emailSortOrder=" + emailSortOrder + ", mobileSortOrder=" + mobileSortOrder + ", eventSortOrder="
+				+ eventSortOrder + ", taxonomySortOrder=" + taxonomySortOrder + ", ipAddressSortOrder="
+				+ ipAddressSortOrder + ", pinCodeSortOrder=" + pinCodeSortOrder + ", vehicleNoSortOrder="
+				+ vehicleNoSortOrder + ", debitCreditCardNoSortOrder=" + debitCreditCardNoSortOrder + ", timeSortOrder="
+				+ timeSortOrder + ", bankAccountNoSortOrder=" + bankAccountNoSortOrder + ", authorCountrySortOrder="
+				+ authorCountrySortOrder + ", authorCitySortOrder=" + authorCitySortOrder + ", mediaUrl=" + mediaUrl
+				+ ", orgFilter=" + orgFilter + ", orgNotFilter=" + orgNotFilter + ", locationFilter=" + locationFilter
+				+ ", locationNotFilter=" + locationNotFilter + ", personFilter=" + personFilter + ", personNotFilter="
+				+ personNotFilter + ", nerDateFilter=" + nerDateFilter + ", nerDateNotFilter=" + nerDateNotFilter
+				+ ", noArt=" + noArt + ", noSrc=" + noSrc + ", noAthr=" + noAthr + ", noPer=" + noPer + ", noPlace="
+				+ noPlace + ", noOrg=" + noOrg + ", noNerDate=" + noNerDate + ", source=" + source + ", sourceNot="
+				+ sourceNot + ", imgFilter=" + imgFilter + ", imgNotFilter=" + imgNotFilter + ", videoFilter="
+				+ videoFilter + ", videoNotFilter=" + videoNotFilter + ", audioFilter=" + audioFilter
+				+ ", audioNotFilter=" + audioNotFilter + ", groupFilter=" + groupFilter + ", groupNotFilter="
+				+ groupNotFilter + ", viralTextFilter=" + viralTextFilter + ", viralTextNotFilter=" + viralTextNotFilter
+				+ ", docTypeFilter=" + docTypeFilter + ", docTypeNotFilter=" + docTypeNotFilter
+				+ ", whatsAppMsgReceiverTypeFilter=" + whatsAppMsgReceiverTypeFilter + ", whatsAppMediaTypeFilter="
+				+ whatsAppMediaTypeFilter + ", whatsAppGroupAdminFilter=" + whatsAppGroupAdminFilter
+				+ ", whatsAppGroupAdminNotFilter=" + whatsAppGroupAdminNotFilter + ", cityFilter=" + cityFilter
+				+ ", cityNotFilter=" + cityNotFilter + ", countryFilter=" + countryFilter + ", countryNotFilter="
+				+ countryNotFilter + ", langFilter=" + langFilter + ", langNotFilter=" + langNotFilter
+				+ ", mobileFilter=" + mobileFilter + ", mobileNotFilter=" + mobileNotFilter + ", emailFilter="
+				+ emailFilter + ", emailNotFilter=" + emailNotFilter + ", eventFilter=" + eventFilter
+				+ ", eventNotFilter=" + eventNotFilter + ", taxonomyFilter=" + taxonomyFilter + ", taxonomyNotFilter="
+				+ taxonomyNotFilter + ", authorCountryFilter=" + authorCountryFilter + ", authorCountryNotFilter="
+				+ authorCountryNotFilter + ", authorCityFilter=" + authorCityFilter + ", authorCityNotFilter="
+				+ authorCityNotFilter + ", isAll=" + isAll + ", twUserCountryCode=" + twUserCountryCode
+				+ ", isGeoSearch=" + isGeoSearch + ", geoPolygon=" + geoPolygon + ", geoPolygonNot=" + geoPolygonNot
+				+ ", geoUserPolygon=" + geoUserPolygon + ", geoUserPolygonNot=" + geoUserPolygonNot + ", componentType="
+				+ componentType + ", componentKeyword=" + componentKeyword + ", isComponent=" + isComponent
+				+ ", classificationFilter=" + classificationFilter + ", classificationNotFilter="
+				+ classificationNotFilter + ", emotionFilter=" + emotionFilter + ", threatMatrixFilter="
+				+ threatMatrixFilter + ", attrName=" + attrName + ", dateFrom2=" + dateFrom2 + ", dateTo2=" + dateTo2
+				+ ", userCreatedDateFrom=" + userCreatedDateFrom + ", userCreatedDateTo=" + userCreatedDateTo
+				+ ", keywordGlobalFilter=" + keywordGlobalFilter + ", locationGlobalFilter=" + locationGlobalFilter
+				+ ", countMediaArticles=" + countMediaArticles + ", fbFriendsByCountry=" + fbFriendsByCountry
+				+ ", fbFriendsByCity=" + fbFriendsByCity + ", profileGlobalFilter=" + profileGlobalFilter
+				+ ", profileGlobalFilterLinkAnalysis=" + profileGlobalFilterLinkAnalysis + ", userSearchKeyword="
+				+ userSearchKeyword + ", rssCountryCode=" + rssCountryCode + ", profileBool=" + profileBool
+				+ ", wtDeviceId=" + wtDeviceId + ", wtDevicePhoneNo=" + wtDevicePhoneNo + ", wtGroupId=" + wtGroupId
+				+ ", wtContactId=" + wtContactId + ", articleNewsSource=" + articleNewsSource + ", wordCloud="
+				+ wordCloud + ", articlePriority=" + articlePriority + ", articleNewsCategory=" + articleNewsCategory
+				+ ", isView=" + isView + ", twUserType=" + twUserType + ", fbUserProfileFilter=" + fbUserProfileFilter
+				+ ", exportWidgetType=" + exportWidgetType + ", documentCount=" + documentCount + ", timeFilter="
+				+ timeFilter + ", geoDistance=" + geoDistance + ", geoPoint=" + geoPoint + ", onlyCount=" + onlyCount
+				+ "]";
+	}
+	
+}

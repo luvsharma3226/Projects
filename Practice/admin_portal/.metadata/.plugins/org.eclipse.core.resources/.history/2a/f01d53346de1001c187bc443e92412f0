@@ -1,0 +1,28 @@
+package com.ng.admin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ng.admin.dto.MenuMappingDto;
+import com.ng.admin.dto.ResponseDto;
+import com.ng.admin.service.IMenuMappingService;
+
+@RestController
+public class MenuMappingController {
+	@Autowired
+	private IMenuMappingService menuMappingService;
+
+	@PostMapping("/savemenudetails")
+	public ResponseEntity<?> saveMenuDetails(@RequestBody MenuMappingDto menuMappingDto) {
+		return new ResponseEntity<?>(new ResponseDto(  menuMappingService.saveMenuMappingDetails(menuMappingDto)),HttpStatus.OK);
+	}
+	@GetMapping("/getmenupermissions")
+	public ResponseEntity<?> getMenuDetails(){
+		return new ResponseEntity<?>(menuMappingService.getMenuMapping(),HttpStatus.OK);
+	}
+}

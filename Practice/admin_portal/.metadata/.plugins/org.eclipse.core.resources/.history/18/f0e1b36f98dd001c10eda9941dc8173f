@@ -1,0 +1,30 @@
+package com.ng.admin.model;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor	
+@AllArgsConstructor  
+@Table
+public class OrganizationType extends BaseEntity{
+	
+	private String organizationType;
+	private String organizationAlias;
+	private String organizationDescription;
+	@CreationTimestamp
+	private LocalDateTime creationTime;
+	
+
+}

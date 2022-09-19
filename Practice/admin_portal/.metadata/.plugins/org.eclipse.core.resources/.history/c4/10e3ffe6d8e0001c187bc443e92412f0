@@ -1,0 +1,20 @@
+package com.ng.admin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ng.admin.dto.MenuMappingDto;
+import com.ng.admin.service.organisation.IMenuMappingService;
+
+@RestController
+public class MenuMappingController {
+	@Autowired
+	private IMenuMappingService menuMappingService;
+
+	@PostMapping("/savemenudetails")
+	public String saveMenuDetails(@RequestBody MenuMappingDto menuMappingDto) {
+		return menuMappingService.saveMenuMappingDetails(menuMappingDto);
+	}
+}

@@ -1,0 +1,23 @@
+package com.ng.admin.service.organisation;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.MenuMappingDto;
+import com.ng.admin.repository.IMenuMappingRepository;
+
+@Service
+@Transactional
+public class MenuMappingServiceImpl implements IMenuMappingService {
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+
+	@Override
+	public String saveMenuMappingDetails(MenuMappingDto menuMappingDto ) {
+		menuMappingRepository.save();
+		return "Menu mapping saved successfully";
+	}
+
+}

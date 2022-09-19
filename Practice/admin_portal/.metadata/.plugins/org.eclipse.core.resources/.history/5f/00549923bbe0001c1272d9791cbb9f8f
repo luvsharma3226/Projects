@@ -1,0 +1,60 @@
+package com.ng.admin.service.organisation;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.model.Mart;
+import com.ng.admin.model.MenuMapping;
+import com.ng.admin.model.Portal;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+import com.ng.admin.repository.IPortalRepository;
+
+@Service
+@Transactional
+public class PortalServiceImpl implements IPortalService {
+
+	@Autowired
+	private IPortalRepository portalRepository;
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+	@Autowired
+	private IMartRepository martRepository;
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		Portal portal =new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		Map<Integer, List<Integer>> menuMapping = portalDto.getMenuMapping();
+		Map<MenuMapping,List<Mart>> menuMappingMartMap=new HashMap<MenuMapping, Mart>();
+		for(Integer menuId:menuMapping.keySet()) {
+			MenuMapping menuMapping2 = menuMappingRepository.getById(menuId);
+			System.out.println(menuId);
+			  List<Integer> martIdList = menuMapping.get(menuId);
+			  System.out.println(martIdList);
+			  List<Mart> martList=new ArrayList<Mart>();
+			  for(Integer martId:martIdList) {
+				martList.add(martRepository.getById(martId));  
+				  	  
+			  }
+			  menuMappingMartMap.put(menuMapping2,martList );
+		}	
+		menuMappingMartMap.keySet().forEach(System.out::println);
+		menuMappingMartMap.values().forEach(System.out::println);
+		portal.setMenuMappingList(menuMappingMartMap);
+//		for(MenuMapping m:portal.getMenuMappingList()) {
+//			System.out.println(m);
+//		}
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+}

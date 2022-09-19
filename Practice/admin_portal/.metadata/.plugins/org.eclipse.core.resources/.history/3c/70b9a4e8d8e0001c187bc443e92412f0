@@ -1,0 +1,25 @@
+package com.ng.admin.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.dto.ResponseDto;
+import com.ng.admin.service.IPortalService;
+
+@RestController
+public class PortalController {
+	@Autowired
+	private IPortalService portalService;
+	
+	@PostMapping("/saveportaldetails")
+	public ResponseEntity<?> savePortalDetails(@RequestBody PortalDto portalDto) {
+		return new ResponseEntity<>(new ResponseDto(portalService.savePortalDetails(portalDto)),HttpStatus.OK);
+	}
+
+}

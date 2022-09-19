@@ -1,0 +1,53 @@
+package com.ng.admin.service.organisation;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.MenuMappingDto;
+import com.ng.admin.model.Mart;
+import com.ng.admin.model.MenuMapping;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+
+@Service
+@Transactional
+public class MenuMappingServiceImpl implements IMenuMappingService {
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+	@Autowired
+	private IMartRepository martRepository;
+
+	/*
+	 * Not used
+	 */
+	@Override
+	public String saveMenuMappingDetails(MenuMappingDto menuMappingDto) {
+
+		MenuMapping menuMapping = menuMappingRepository.findByMenuItem(menuMappingDto.getMenuItem());
+		Set<Mart> martList = new HashSet<Mart>();
+		// checking if menu item already exist
+		if (menuMapping == null) {
+			menuMapping = new MenuMapping();
+			menuMapping.setMenuItem(menuMappingDto.getMenuItem());
+		} else {
+			martList = menuMapping.getMartList();
+			// System.out.println(martList);
+		}
+		if (menuMappingDto.getMartId() != null) {
+			Mart mart = martRepository.findById(menuMappingDto.getMartId())
+					.orElseThrow(() -> new RuntimeException("Mart Id not found"));
+			martList.add(mart);
+
+		}
+		if (martList.size() != 0)
+			menuMapping.setMartList(martList);
+		menuMappingRepository.save(menuMapping);
+		return "Menu mapping saved successfully";
+	}
+
+}

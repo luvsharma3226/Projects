@@ -1,0 +1,21 @@
+package com.ng.admin.service;
+
+import java.util.List;
+
+import com.ng.admin.dto.OrganizationTypeDto;
+import com.ng.admin.model.OrganizationType;
+import com.ng.admin.projections.OrganizationTypeNameAndId;
+
+public interface IOrganizationTypeService {
+
+	public List<OrganizationTypeNameAndId> getOrganizationTypeAndIdList();
+
+	public String saveOrganizationTypeDetails(OrganizationTypeDto organizationTypeDto);
+
+	public String updateOrganizationDetails(int id, OrganizationTypeDto organizationTypeDto);
+
+	public List<OrganizationType> getOrganizationTypeObjectList();
+
+	public String deleteOrganizationTypeById(Integer id);
+
+}

@@ -1,0 +1,8 @@
+package com.ng.admin.service.organisation;
+
+import com.ng.admin.dto.MenuMappingDto;
+
+public interface IMenuMappingService {
+	//not used
+	String saveMenuMappingDetails(MenuMappingDto menuMappingDto);
+}

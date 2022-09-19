@@ -1,0 +1,19 @@
+package com.ng.admin.projections;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.ng.admin.model.PortalMenuMapping;
+
+@JsonInclude(Include.NON_EMPTY)
+public interface PortalMenuMappingIdList {
+	List<PortalMenuMapping> getPortalMenuMapping();
+
+	@JsonInclude(Include.NON_EMPTY)
+	interface MenuMappingProjection {
+		int getMenuMappingId();
+
+		int getMartId();
+	}
+}

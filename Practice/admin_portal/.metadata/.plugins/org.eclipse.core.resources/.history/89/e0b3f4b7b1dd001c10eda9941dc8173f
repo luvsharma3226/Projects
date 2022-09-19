@@ -1,0 +1,9 @@
+package com.ng.admin.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ng.admin.model.Mart;
+
+public interface IMartRepository extends JpaRepository<Mart, Integer>{
+Mart findByMartName(String martName);
+}

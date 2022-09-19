@@ -1,0 +1,62 @@
+package com.ng.admin.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ng.admin.dto.BaseEntityDto;
+import com.ng.admin.dto.OrganizationTypeDto;
+import com.ng.admin.dto.ResponseDto;
+import com.ng.admin.model.OrganizationType;
+import com.ng.admin.service.IOrganizationTypeService;
+@CrossOrigin("*")
+@RestController
+public class OrganizationTypeController {
+	
+	@Autowired
+	private IOrganizationTypeService iOrganizationTypeService;
+	
+	@GetMapping(value = "/getorganization" )
+	public ResponseEntity<?> getOrganizationTypeList(){		
+		return new ResponseEntity<>( iOrganizationTypeService.getOrganizationTypeList(),HttpStatus.OK);		
+	}
+	//not used
+	@GetMapping(value="/getorganizationlist")
+	public ResponseEntity<?> getOrganizationTypeObjectList(){
+		System.out.println(iOrganizationTypeService.getOrganizationTypeObjectList());
+		List<OrganizationType> organizationTypeObjectList = iOrganizationTypeService.getOrganizationTypeObjectList();
+		for(OrganizationType o:organizationTypeObjectList) {
+			System.out.println(o);
+		}
+		return new ResponseEntity<>(  iOrganizationTypeService.getOrganizationTypeObjectList(),HttpStatus.OK);
+		
+	}
+	
+	@PostMapping(value="/saveorganizationdetails")
+	public ResponseEntity<?> saveOrganizationDetails(@RequestBody OrganizationTypeDto organizationTypeDto){
+		return new ResponseEntity<>(new ResponseDto(iOrganizationTypeService.saveOrganizationTypeDetails(organizationTypeDto)),HttpStatus.OK);		
+	}
+	
+	@PutMapping(value="/updateorganizationData/{id}")
+	public ResponseEntity<?> updateOrganizationDetails(@PathVariable("id") int id, @RequestBody OrganizationTypeDto organizationTypeDto){
+		return new ResponseEntity<>(new ResponseDto( iOrganizationTypeService.updateOrganizationDetails(id,organizationTypeDto)), HttpStatus.OK);
+		
+	}
+	
+	@DeleteMapping(value="/deleteorganization")
+	public ResponseEntity<?> deleteOrganizationTypeById(@RequestBody BaseEntityDto baseEntityDto){
+		return new ResponseEntity<>(new ResponseDto(iOrganizationTypeService.deleteOrganizationTypeById(baseEntityDto) ), HttpStatus.OK);
+		
+	}
+}

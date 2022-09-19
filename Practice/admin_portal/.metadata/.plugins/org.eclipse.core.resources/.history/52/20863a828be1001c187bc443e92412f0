@@ -1,0 +1,24 @@
+package com.ng.admin.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Mart extends BaseEntity {
+	@Column(unique = true)
+	private String martName;
+	@Value("${some.key:false}")
+	private boolean selectedChild;
+
+}

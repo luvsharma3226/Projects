@@ -1,0 +1,11 @@
+package com.ng.admin.service.organisation;
+
+public class MenuMappingServiceImpl implements IMenuMappingService {
+
+	@Override
+	public String saveMenuMappingDetails(String menuItems) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

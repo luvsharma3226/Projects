@@ -1,0 +1,5 @@
+package com.ng.admin.dto;
+
+public class MenuMappingDto {
+String menuItems;
+}

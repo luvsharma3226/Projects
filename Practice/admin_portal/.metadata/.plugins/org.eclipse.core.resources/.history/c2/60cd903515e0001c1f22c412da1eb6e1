@@ -1,0 +1,13 @@
+package com.ng.admin.service.organisation;
+
+import com.ng.admin.dto.PortalDto;
+
+public class PortalServiceImpl implements IPortalService {
+
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

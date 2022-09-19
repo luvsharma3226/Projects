@@ -1,0 +1,6 @@
+package com.ng.admin.dto;
+
+public class MartDto {
+	String martItems;
+
+}

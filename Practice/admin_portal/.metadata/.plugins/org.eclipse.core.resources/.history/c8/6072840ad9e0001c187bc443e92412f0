@@ -1,0 +1,10 @@
+package com.ng.admin.service;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.model.BaseEntity;
+import com.ng.admin.model.Portal;
+
+public interface IPortalService {
+String savePortalDetails(PortalDto portalDto);
+Portal getPortalDetails(BaseEntity baseEntity);
+}

@@ -1,0 +1,14 @@
+package com.ng.admin.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Mart {
+private String martName;
+@ManyToMany
+private List<MenuMapping> menuMappingList=new  ArrayList<MenuMapping>();
+}

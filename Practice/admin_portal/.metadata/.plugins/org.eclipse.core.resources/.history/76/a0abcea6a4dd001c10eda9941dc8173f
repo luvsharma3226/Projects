@@ -1,0 +1,7 @@
+package com.ng.admin.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MenuMappingRepository extends JpaRepository<T, ID> {
+
+}

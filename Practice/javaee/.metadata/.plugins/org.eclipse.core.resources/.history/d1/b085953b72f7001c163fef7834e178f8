@@ -1,0 +1,16 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		System.out.println("Enter a number : ");
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Integer> bin = new ArrayList<Integer>();
+		
+		
+	}
+
+}

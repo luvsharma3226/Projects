@@ -1,0 +1,8 @@
+package com.ng.admin.service.organisation;
+
+import com.ng.admin.dto.PortalDto;
+
+public interface IPortalService {
+String savePortalDetails(PortalDto portalDto);
+
+}

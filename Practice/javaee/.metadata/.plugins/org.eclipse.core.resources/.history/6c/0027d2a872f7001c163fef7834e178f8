@@ -1,0 +1,27 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		System.out.println("Enter a number : ");
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Integer> bin = new ArrayList<Integer>();
+		int num = sc.nextInt();
+		
+		while(num != 0) {
+			int digit = num % 2;
+			bin.add(digit);
+			num = num /2;
+		}
+		
+		for (Integer integer : bin) {
+			System.out.println(integer);
+		}
+		
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.ng.admin.service.organisation;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.model.Portal;
+import com.ng.admin.repository.IPortalRepository;
+
+public class PortalServiceImpl implements IPortalService {
+
+	@Autowired
+	private IPortalRepository portalRepository;
+	
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		Portal portal =new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		portal.setMenuMappingList(portalDto.getMenuMappingList());
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+}

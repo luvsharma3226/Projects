@@ -1,0 +1,5 @@
+package com.ng.admin.projections;
+
+public interface PortalNameId {
+
+}

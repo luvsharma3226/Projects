@@ -1,0 +1,148 @@
+package com.ng.admin.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.BaseEntityDto;
+import com.ng.admin.dto.ParentDto;
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.dto.PortalDto2;
+import com.ng.admin.model.Portal;
+import com.ng.admin.model.PortalMenuMapping;
+import com.ng.admin.projections.PortalView;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+import com.ng.admin.repository.IPortalRepository;
+
+@Service
+@Transactional
+public class PortalServiceImpl implements IPortalService {
+
+	@Autowired
+	private IPortalRepository portalRepository;
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+	@Autowired
+	private IMartRepository martRepository;
+
+	// Method:To save portal details
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		Portal portal = new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		portal.setCreatedBy(portalDto.getCreatedBy());
+		;
+		Map<Integer, List<Integer>> menuMappingMap = portalDto.getMenuMapping();
+		Set<Integer> menuIdList = menuMappingMap.keySet();
+		int mId = 0;
+		for (Integer menuId : menuIdList) {
+			mId = menuId;
+		}
+
+		List<Integer> martIdList = menuMappingMap.get(mId);
+
+		List<PortalMenuMapping> portalMenuMappingList = new ArrayList<>();
+		PortalMenuMapping portalMenuMapping = new PortalMenuMapping();
+		for (int i = 0; i < martIdList.size(); i++) {
+
+			portalMenuMapping.setMartId(martIdList.get(i));
+			portalMenuMapping.setMenuMappingId(mId);
+			portalMenuMappingList.add(portalMenuMapping);
+		}
+		if (martIdList.size() == 0) {
+			portalMenuMapping.setMenuMappingId(mId);
+			;
+			portalMenuMappingList.add(portalMenuMapping);
+
+		}
+		portal.setPortalMenuMapping(portalMenuMappingList);
+
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+	// Method:To get the portal details
+	@Override
+	public Portal getPortalDetails(BaseEntityDto baseEntityDto) {
+
+		return portalRepository.getById(baseEntityDto.getId());
+	}
+
+	// Method: To get list of portals
+	@Override
+	public List<PortalView> getPortalList() {
+		return portalRepository.getPortalDetails();
+	}
+
+	// Method:To get complete portal details
+	@Override
+	public List<Portal> getCompletePortalDetails() {
+		return portalRepository.findAll();
+	}
+
+	// Method:To save portal details
+	@Override
+	public String savePortalDetails2(PortalDto2 portalDto) {
+		Portal portal = new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		portal.setCreatedBy(portalDto.getCreatedBy());
+		;
+//		Map<Integer, List<Integer>> menuMappingMap = new HashMap<Integer, List<Integer>>();
+//		List<Integer> martIdlI=new ArrayList<Integer>();
+//	
+//		Set<Integer> menuIdList = menuMappingMap.keySet();
+//		int mId=0;
+//		for(Integer menuId:menuIdList) {
+//			mId=menuId;
+//		}
+//	
+//		List<Integer> martIdList = menuMappingMap.get(mId);
+		List<PortalMenuMapping> portalMenuMappingList = new ArrayList<>();
+		PortalMenuMapping portalMenuMapping = null;
+//		for(int i=0;i<martIdList.size();i++) {		
+//		
+//			portalMenuMapping.setMartId(martIdList.get(i));
+//			portalMenuMapping.setMenuMappingId(mId);
+//			portalMenuMappingList.add(portalMenuMapping);
+//		}
+		for (ParentDto menuId : portalDto.getMenuMappingIdList()) {
+			// System.out.println(p.getId());;
+			for (BaseEntityDto martId : menuId.getMartIdList()) {
+//				if(menuId.getMartList().size()==0) {
+//				portalMenuMapping.setMenuMappingId(menuId.getId());	
+//				}else {
+				portalMenuMapping=new PortalMenuMapping();
+				//System.out.println(martId.getId());
+				portalMenuMapping.setMartId(martId.getId());
+				portalMenuMapping.setMenuMappingId(menuId.getId());
+				// }
+				portalMenuMappingList.add(portalMenuMapping);
+			}
+			if(menuId.getMartIdList().size()==0) {
+				portalMenuMapping=new PortalMenuMapping();
+				portalMenuMapping.setMenuMappingId(menuId.getId());
+				portalMenuMappingList.add(portalMenuMapping);
+			}
+		}
+//	if(martIdList.size()==0) {
+//		portalMenuMapping.setMenuMappingId(mId);;
+//		portalMenuMappingList.add(portalMenuMapping);
+//	
+//	}
+		portal.setPortalMenuMapping(portalMenuMappingList);
+
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+}

@@ -1,0 +1,48 @@
+package com.ng.admin.service.organisation;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.MartDto;
+import com.ng.admin.model.Mart;
+import com.ng.admin.model.MenuMapping;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+
+@Service
+@Transactional
+public class MartServiceImpl implements IMartService {
+
+	@Autowired
+	private IMartRepository martRepository;
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+
+	@Override
+	public String saveMartDetails(MartDto martDto) throws Exception {
+		MenuMapping menuMapping = menuMappingRepository.findById(martDto.getParentId())
+				.orElseThrow(() -> new Exception("Menu item not found"));
+
+		Mart mart = martRepository.findByMartName(martDto.getMartItems());
+		Set<MenuMapping> menuMappingSet = new HashSet<MenuMapping>();
+//		// checking if mart item is already present
+		if (mart == null) {
+			mart = new Mart();
+			mart.setMartName(martDto.getMartItems());			
+		}else {
+			mart.getMenuMappingList();
+		}
+		
+		menuMappingSet.add(menuMapping);
+		mart.setMenuMappingList(menuMappingSet);
+
+		martRepository.save(mart);
+		return "Mart Details saved successfully";
+	}
+
+}

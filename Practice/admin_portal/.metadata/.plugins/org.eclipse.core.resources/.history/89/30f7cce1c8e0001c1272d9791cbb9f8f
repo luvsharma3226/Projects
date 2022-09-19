@@ -1,0 +1,24 @@
+package com.ng.admin.model;
+
+import java.util.List;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Entity
+public class Portal extends BaseEntity{
+	private String portalName;
+	private String portalAlias;
+	@Embedded
+	private List<PortalMenuMapping> portalMenuMapping;
+	
+}

@@ -1,0 +1,45 @@
+package com.ng.admin.model;
+
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class MenuMapping extends BaseEntity {
+	private String menuItem;
+	@ManyToMany
+	@JoinTable(name="menu_mapping_mart", joinColumns = @JoinColumn(name = "mapping_id"), inverseJoinColumns = @JoinColumn(name = "mart_id"))
+	private Set<Mart> martList = new HashSet<>();
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(menuItem);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MenuMapping other = (MenuMapping) obj;
+		return Objects.equals(menuItem, other.menuItem);
+	}
+
+}

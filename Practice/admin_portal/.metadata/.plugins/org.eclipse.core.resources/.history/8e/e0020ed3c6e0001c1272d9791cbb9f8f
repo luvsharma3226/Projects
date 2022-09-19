@@ -1,0 +1,20 @@
+package com.ng.admin.model;
+
+import java.util.List;
+
+import javax.persistence.Embeddable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@Embeddable
+public class PortalMenuMapping {
+	private int menuMappingId;
+	private List<Integer> martIdList;
+}

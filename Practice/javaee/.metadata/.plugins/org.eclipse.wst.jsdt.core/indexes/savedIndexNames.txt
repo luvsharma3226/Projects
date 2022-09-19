@@ -1,0 +1,11 @@
+INDEX VERSION 1.4+/home/ns40/Documents/Practice/javaee/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+571857607.index
+2416228380.index
+4168824120.index
+2540272645.index
+2036800809.index
+1553044143.index
+2527794738.index
+4216318703.index
+1599046192.index
+3875768458.index

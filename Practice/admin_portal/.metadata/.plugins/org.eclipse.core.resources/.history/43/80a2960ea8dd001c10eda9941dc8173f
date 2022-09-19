@@ -1,0 +1,6 @@
+package com.ng.admin.service.organisation;
+
+public interface IMenuMappingService {
+	//not used
+	String saveMenuMappingDetails(String menuItems);
+}

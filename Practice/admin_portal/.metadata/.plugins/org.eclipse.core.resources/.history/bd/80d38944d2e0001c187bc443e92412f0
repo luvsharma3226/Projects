@@ -1,0 +1,59 @@
+package com.ng.admin.service.organisation;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.model.Portal;
+import com.ng.admin.model.PortalMenuMapping;
+import com.ng.admin.repository.IMartRepository;
+import com.ng.admin.repository.IMenuMappingRepository;
+import com.ng.admin.repository.IPortalRepository;
+
+@Service
+@Transactional
+public class PortalServiceImpl implements IPortalService {
+
+	@Autowired
+	private IPortalRepository portalRepository;
+	@Autowired
+	private IMenuMappingRepository menuMappingRepository;
+	@Autowired
+	private IMartRepository martRepository;
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		Portal portal =new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		Map<Integer, List<Integer>> menuMappingMap = portalDto.getMenuMapping();
+		Set<Integer> menuIdList = menuMappingMap.keySet();
+		int mId=0;
+		for(Integer menuId:menuIdList) {
+			mId=menuId;
+		}
+		System.out.println(mId);
+		List<Integer> martIdList = menuMappingMap.get(mId);
+		martIdList.forEach(System.out::println);
+		List<PortalMenuMapping> portalMenuMappingList=new ArrayList<>();
+		for(int i=0;i<martIdList.size();i++) {		
+			PortalMenuMapping portalMenuMapping=new PortalMenuMapping();
+			portalMenuMapping.setMartIdList(martIdList.get(i));
+			portalMenuMapping.setMenuMappingId(mId);
+		}
+		System.out.println("Insadasd");
+		portal.setPortalMenuMapping(portalMenuMappingList);
+		for(PortalMenuMapping p: portal.getPortalMenuMapping()) {
+			System.out.println("adsadsa"+p.getMartId()+p.getMenuMappingId());
+		}
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+}

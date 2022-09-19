@@ -1,0 +1,16 @@
+package com.ng.admin.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.ng.admin.model.OrganizationType;
+
+@Repository
+public interface IOrganizationTypeRepository extends JpaRepository<OrganizationType, Integer>{
+	
+	@Query("select o.organizationType , o.id from OrganizationType o")
+	public List<Object[]> getAllOrganizationType();
+}

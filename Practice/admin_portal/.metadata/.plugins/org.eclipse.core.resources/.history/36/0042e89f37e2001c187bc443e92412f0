@@ -1,0 +1,20 @@
+package com.ng.admin.service;
+
+import java.util.List;
+
+import com.ng.admin.dto.BaseEntityDto;
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.dto.PortalMenuMappingDto;
+import com.ng.admin.model.Portal;
+import com.ng.admin.projections.PortalNameAndId;
+import com.ng.admin.projections.PortalView;
+
+public interface IPortalService {
+
+Portal getPortalDetails(BaseEntityDto baseEntityDto);
+List<PortalView> getPortalList();
+List<Portal> getCompletePortalDetails();
+String savePortalDetails(PortalDto portalDto);
+List<PortalNameAndId> getPortalNameIdList();
+List<PortalMenuMappingDto> getPortalMenuMappingList(Integer id);
+}

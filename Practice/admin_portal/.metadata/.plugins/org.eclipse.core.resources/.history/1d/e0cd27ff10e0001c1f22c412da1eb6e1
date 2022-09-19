@@ -1,0 +1,9 @@
+package com.ng.admin.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Portal {
+	private String portalName;
+	private String portalAlias;
+}

@@ -1,0 +1,11 @@
+package com.ng.admin.dto;
+
+import java.util.List;
+
+public class PortalDto2 {
+private String portalName;
+private String portalAlias;
+private String createdBy;
+private List<ParentDto> menuMappingId; 
+
+}

@@ -1,0 +1,70 @@
+package com.ng.admin.service.organisation;
+
+import java.util.List;
+import java.util.Objects;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.BaseEntityDto;
+import com.ng.admin.dto.OrganizationTypeDto;
+import com.ng.admin.model.OrganizationType;
+import com.ng.admin.projections.OrganizationTypeView;
+import com.ng.admin.repository.IOrganizationTypeRepository;
+
+@Service
+@Transactional
+public class OrganizationServiceImpl implements IOrganizationTypeService {
+
+	@Autowired
+	private IOrganizationTypeRepository organizationTypeRepository;
+
+	@Override
+	public List<OrganizationTypeView> getOrganizationTypeList() {
+		return organizationTypeRepository.getAllOrganizationType();
+	}
+
+	@Override
+	public String saveOrganizationTypeDetails(OrganizationTypeDto organizationTypeDto) {
+
+		OrganizationType organizationType = new OrganizationType();
+
+		organizationType.setOrganizationType(organizationTypeDto.getOrganizationType());
+		organizationType.setOrganizationAlias(organizationTypeDto.getOrganizationAlias());
+		
+
+		organizationTypeRepository.save(organizationType);
+		return "Organization Data Add Succefully.";
+	}
+
+	@Override
+	public String updateOrganizationDetails(int id, OrganizationTypeDto organizationTypeDto) {
+		OrganizationType organizationType = organizationTypeRepository.getById(id);
+
+		if (Objects.nonNull(organizationTypeDto.getOrganizationAlias())
+				&& !"".equalsIgnoreCase(organizationTypeDto.getOrganizationAlias())) // check null & empty space
+			organizationType.setOrganizationAlias(organizationTypeDto.getOrganizationAlias());
+
+
+		if (Objects.nonNull(organizationTypeDto.getOrganizationType())
+				&& !"".equalsIgnoreCase(organizationTypeDto.getOrganizationType()))
+			organizationType.setOrganizationType(organizationTypeDto.getOrganizationType());
+
+		organizationTypeRepository.save(organizationType);
+		return "Organization Data Updated Succefully.";
+	}
+
+	@Override
+	public List<OrganizationType> getOrganizationTypeObjectList() {
+		return organizationTypeRepository.findAll();
+	}
+
+	@Override
+	public String deleteOrganizationTypeById(BaseEntityDto baseEntityDto) {
+		organizationTypeRepository.deleteById(baseEntityDto.getId());
+		return "Organization Deleted Succesfully";
+	}
+
+}

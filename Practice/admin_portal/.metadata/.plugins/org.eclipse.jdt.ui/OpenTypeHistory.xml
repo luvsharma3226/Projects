@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=admin_portal/\/home\/ns26\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.6.4\/spring-data-jpa-2.6.4.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.6.4=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1653383742933"/>
+    <typeInfo handle="=admin_portal/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ng.admin.service.organisation{IMenuMappingService.java[IMenuMappingService" modifiers="513" timestamp="1653647441058"/>
+    <typeInfo handle="=admin_portal/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.ng.admin.service.organisation{IPortalService.java[IPortalService" modifiers="513" timestamp="1653913176878"/>
+</typeInfoHistroy>

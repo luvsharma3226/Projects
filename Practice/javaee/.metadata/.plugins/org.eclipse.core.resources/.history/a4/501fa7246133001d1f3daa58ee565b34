@@ -1,0 +1,6 @@
+package com.dailycodebuffer.service;
+
+@Service
+public class UserService {
+
+}

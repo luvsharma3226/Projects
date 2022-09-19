@@ -1,0 +1,5 @@
+package com.ng.admin.repository;
+
+public interface IPortal {
+
+}

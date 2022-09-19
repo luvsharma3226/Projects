@@ -1,0 +1,39 @@
+package com.ng.admin.service.organisation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ng.admin.dto.PortalDto;
+import com.ng.admin.model.MenuMapping;
+import com.ng.admin.model.Portal;
+import com.ng.admin.repository.IMenuMappingRepository;
+import com.ng.admin.repository.IPortalRepository;
+
+@Service
+@Transactional
+public class PortalServiceImpl implements IPortalService {
+
+	@Autowired
+	private IPortalRepository portalRepository;
+	@Autowired
+	private IMenuMappingRepository mappingRepository;
+	@Override
+	public String savePortalDetails(PortalDto portalDto) {
+		Portal portal =new Portal();
+		portal.setPortalName(portalDto.getPortalName());
+		portal.setPortalAlias(portalDto.getPortalAlias());
+		
+		
+		for(MenuMapping m:portal.getMenuMappingList()) {
+			System.out.println(m);
+		}
+		portalRepository.save(portal);
+		return "Portal Details Saved Successfully";
+	}
+
+}

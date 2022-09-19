@@ -1,0 +1,7 @@
+package com.ng.admin.dto;
+
+public class PortalDto {
+private String portalName;
+private String portalAlias;
+private List<>
+}

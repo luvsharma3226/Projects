@@ -1,0 +1,9 @@
+package com.ng.admin.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class MenuMapping extends BaseEntity {
+private String menuItems;
+
+}
